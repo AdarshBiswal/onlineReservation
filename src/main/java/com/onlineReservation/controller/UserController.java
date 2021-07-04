@@ -52,8 +52,8 @@ public class UserController {
 		System.out.println("Validating UserId and Password");
 		
 		
-		
-		if(userService.getUserByemailOrPhone(email).equals("Unsuccessfull"))
+		System.out.println(userService.getUserByemailOrPhone(email,password));
+		if(userService.getUserByemailOrPhone(email,password).equals("Unsuccessfull"))
 		{
 			mv.addObject("UserLogged", "Failed");
 			mv.setViewName("signin");

@@ -53,11 +53,13 @@ public class UserService {
 		
 	}
 	
-	public String getUserByemailOrPhone(String emailOrNumber)
+	public String getUserByemailOrPhone(String emailOrNumber,String password)
 	{
 		
 		try {
 			boolean isPhoneNumber=false;
+			
+			
 			
 			for(int i=0;i<emailOrNumber.length();i++)
 			{
@@ -77,8 +79,20 @@ public class UserService {
 
 				if(userRepo.findByEmail(emailOrNumber)!=null)
 				{
-					System.out.println("UserID retrived");
-					return "Success";
+					
+					UserModel um=userRepo.findByEmail(emailOrNumber);
+					
+					if(um.getPassword().equals(password))
+					{
+						System.out.println("UserID retrived");
+						return "Success";
+					}
+					else
+					{
+						System.out.println("PASSWORD FOR THE USER NAME IS INCORRECT");
+						return "Unsuccessfull";
+					}
+					
 				}
 				else
 				{
@@ -92,8 +106,18 @@ public class UserService {
 			{
 				if(userRepo.findByMobile(emailOrNumber)!=null)
 				{
+					UserModel um=userRepo.findByMobile(emailOrNumber);
+					
+					if(um.getPassword().equals(password))
+					{
 						System.out.println("UserID retrived");
 						return "Success";
+					}
+					else
+					{
+						System.out.println("PASSWORD FOR THE USER NAME IS INCORRECT");
+						return "Unsuccessfull";
+					}
 				}
 				else
 				{

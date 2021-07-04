@@ -113,12 +113,12 @@ span.psw {
   			<table class="table">
   			<thead class="thead-dark">
     		<tr style="border-bottom: 1px solid #000;">
-    			<th scope="col" style=" text-align: center;">DATE ${emp.date}</th>
-      			<th scope="col" style=" text-align: center;">FROM  ${emp.from}</th>
-      			<th scope="col" style=" text-align: center;">TO  ${emp.to}</th>
-      			<th scope="col" style=" text-align: center;">BUS NAME ${emp.busID}</th>
-      			<th scope="col" style=" text-align: center;">SEAT  ${emp.seats}</th>
-    		</tr>
+    			<th scope="col" style=" text-align: center;">DATE<br>   ${emp.date}</th>
+      			<th scope="col" style=" text-align: center;">FROM<br>   ${emp.from}</th>
+      			<th scope="col" style=" text-align: center;">TO<br>     ${emp.to}</th>
+      			<th scope="col" style=" text-align: center;">BUS NAME <br> ${emp.busID}</th>
+      			<th scope="col" style=" text-align: center;">SEAT <br>	  ${emp.seats}</th>
+    		</tr>	
   			</thead>
   		</table>
     	</c:forEach>

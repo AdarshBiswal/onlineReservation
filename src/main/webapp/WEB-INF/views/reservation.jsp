@@ -8,8 +8,9 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://thymeleaf.org/">
 <head>
-<title>ZSphere-Reservation</title>
+<title>ZLINE :: Reservation</title>
 <link href="${contextPath}/css1/style.css" rel="stylesheet" type="text/css" media="all" />
+
 <style>
 form {border: 3px solid #f1f1f1;}
 
@@ -76,25 +77,15 @@ span.psw {
 
 
 </head>
-<nav class="navbar navbar-expand-lg  bg-light">
-  <a class="navbar-brand" href="#" style="color:GREEN;">ZLINE TRAVELS</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/register" style="position:relative; left:980%;">REGISTER</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/signin" style="position:relative; left:1170%;" >LOGIN</a>
-      </li>
-    </ul>
-  </div>
-</nav>
+<div style="background-color: #F8F8FF; height:55px;">
+  <ul>
+  <a class="navbar-brand" href="/"  style="color:GREEN; font-size:20px; position:relative; top:20px; left:2%;">ZLINE TRAVELS</a>
+  <li><a href="/" style="color:#38ACEC;position:relative; top:-3px;left:15%;font-size:19px; font-weight: bold;">Home</a></li>
+  <li><a href="/login" style="color:#38ACEC; position:relative; left:85%;top:-23px;font-weight: bold;">LOGIN</a></li>
+  <li><a href="/register" style=" color:#38ACEC;position:relative; left:90%;top:-41px;font-weight: bold;">REGISTER</a></li>
+  
+</ul>
+</div>
 <body onload="myFunction1()">
 <div class="content">
 	<h1>Welcome to ZLine Bus Reservation</h1>

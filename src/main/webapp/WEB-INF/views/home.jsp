@@ -6,7 +6,7 @@
 <!DOCTYPE HTML>
 <html lang="en" xmlns:th="http://thymeleaf.org/">
 <head>
-<title>ZLINE Travels| Home </title>
+<title>ZLINE Travels :: Home </title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
@@ -55,7 +55,7 @@
 		<h1 style="color:#1a6100; ">ZLINE Bus Service.<br>(Luxury Volvo Bus)</h1>
 		<input type="hidden" name="loginInfo" id="loginInfo" >
 		<button class="btn" type="submit" name="reservation" value="reservation" id="reservation" Style="position:relative; left:0%; top:180px; background-color: #34a30b; color: white; padding: 15px 32px;font-size: 16px;" onclick="myFun()">BOOK TICKETS NOW</button>
-		
+		<input type="hidden" id="isLogged" >
 		<button class="btn" type="submit"  name="manage" value="manage" id="manage" Style="position:relative; left:60%; background-color: #34a30b; color: white; padding: 15px 32px;top:180px;font-size: 16px;" onclick="myFun1()">VIEW ALL BOOKING</button>
 		<br>
 	</div>
