@@ -41,8 +41,7 @@ More than one user cannot select same seat.
   
 ##### Schema Used <h6>
   1. (USER table and BUS table)many to many -> one user can select multiple bus.
-  
-  2.(USER table and BOOKING table) many to many -> one user 
+  2. (USER table and BOOKING table) many to many -> one user 
                
   
   
