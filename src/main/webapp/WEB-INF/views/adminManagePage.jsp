@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://thymeleaf.org/">
 <head>
-<title>ZLINE :: Register</title>
+<title>ZLINE :: Admin Page</title>
 <link href="${contextPath}/css1/style.css" rel="stylesheet" type="text/css" media="all" />
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -99,26 +99,31 @@ span.psw {
 <div class="content">
 	<h1>Welcome to ZLine Bus Reservation</h1>
 	<div class="main">
-		<h2>New User Registration</h2>
+		<h2>You Can now add Bus</h2>
 		<div class="clear"></div>
-		<div>
-			<form action="/user/addUser" method="post">
+		<button onclick="myFun3()">Click Here To Add Bus</button>
+		
+		<div id="divDISPLAY" style="display:none">
+			<form action="/bus/addBus" method="post" >
 
- 					<label for="firstName"><b>First Name</b></label>
-    				<input type="text" placeholder="Enter FirstName" name="firstName" required>
-    				<label for="lastName"><b>Last Name</b></label>
-    				<input type="text" placeholder="Enter LastName" name="lastName" required>
-    				<label for="email"><b>Email Address</b></label>
-    				<input type="email" placeholder="Enter Email Address" name="email" required onchange="validateEmail(this);">
+ 					<label for="busName"><b>Bus Name</b></label>
+    				<input type="text" placeholder="Enter Bus Name" name="busName" required>
+    				<label for="startCity"><b>From</b></label>
+    				<input type="text" placeholder="Enter LastName" name="startCity" required>
+    				<label for="destinationCity"><b>To</b></label>
+    				<input type="text" placeholder="Enter Email Address" name="destinationCity" required >
     				
-    				<label for="mobile"><b>Mobile Number</b></label>
-    				<input type="text" placeholder="Enter Mobile Number" name="mobile" required onkeypress="return isNumber(event)">
+    				<label for="bookedSeat"><b>Booked seats</b></label>
+    				<input type="text" placeholder="Enter which seats are booked in space. EX:1 2" name="bookedSeat" required >
     				
-    				<label for="password"><b>Password</b></label>
-    				<input type="password" placeholder="Enter Password" name="password" required onchange='check();'>
+    				<label for="startingTime"><b>Bus Time</b></label>
+    				<input type="text" placeholder="Enter Bus Time Ex. 10:00 PM" name="startingTime" required >
+    				
+    				<label for="day"><b>Enter Day</b></label>
+    				<input type="text" placeholder="Enter Day. Ex: Monday" name="day" required >
     				
   
-    				<button type="submit">Sign Up</button>
+    				<button type="submit">Add Bus</button>
   				</div>
 		</form>
 		</div>
@@ -150,6 +155,20 @@ function validateEmail(emailField){
     return true;
 
 }
+
+function myFun3(){
+	
+	var x=document.getElementById("divDISPLAY");
+   	if(x.style.display === "none")
+   		{
+   			x.style.display="block";
+   		}
+   	else
+   		{
+   			x.style.display ="none";
+   		}
+}
+
 </script>
 	
 

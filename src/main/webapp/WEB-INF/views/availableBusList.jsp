@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>ZLINE :: Payment</title>
+<title>ZLINE :: AVAILABLE BUS CHART</title>
 <link href="${contextPath}/css1/style.css" rel="stylesheet" type="text/css" media="all" />
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -75,7 +75,7 @@ span.psw {
 }
 </style>
 </head>
-<body>
+<body >
 <nav class="navbar navbar-expand-lg  bg-light">
   <a class="navbar-brand" href="#" style="color:GREEN;">ZLINE TRAVELS</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -95,63 +95,67 @@ span.psw {
     </ul>
   </div>
 </nav>
-<div class="content">
+
+
+<div class="content" style=" background:url("${contextPath}/images1/banner.jpg")">
 	<h1>Welcome to ZLine Bus Reservation</h1>
-	<div class="main">
-		<h2>CONFIRM DETAILS AND PAY</h2>
+	<div class="main" style="width:50%;">
 		<div class="clear"></div>
-<form action="/booking/addBookingInformation" method="post">
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label style="position:relative; left:40%;  font-weight: bold;" for="fromCity">From</label>
-      <input style="text-align: center; " type="text" class="form-control" name="fromCity" placeholder="From City" disabled value="${fromCity}">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="toCity" style="position:relative; left:40%; font-weight: bold;">To</label>
-      <input style="text-align: center;" type="text" class="form-control" name="toCity" value="${toCity}" disabled>
-    </div>
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="jDate" style="position:relative; left:40%; font-weight: bold;">Date</label>
-      <input style="text-align: center;" type="text" class="form-control" name="toCity" value="${JDate}" disabled>
-    </div>
-     <div class="form-group col-md-6">
-      <label for="jDate" style="position:relative; left:30%; font-weight: bold;">Bus Name</label>
-      <input style="text-align: center;" type="text" class="form-control" name="toCity" value="${busName}" disabled>
-    </div>
-    
-      <div >
-      <label for="jDate" style="position:relative; left:30%; font-weight: bold;">Total Amount Payable</label>
-      <input style="position:relative; top:50px; left:-20%; width:200px; text-align: center;" type="text" class="form-control" name="toCity" value="${finalPrice}" disabled>
-      <br>
-      <br>
-      <br>
-    </div>
-  </div>
-  
-  <div class="form-row">
-   <input type="hidden" name="email" id="email" value="${email}">
-   <input type="hidden" name="fromCity" id="fromCity" value="${fromCity}">
-   <input type="hidden" name="toCity" id="toCity" value="${toCity}">
-   <input type="hidden" name="busName" id="busName" value="${busName}">
-   <input type="hidden" name="finalPrice" id="finalPrice" value="${finalPrice}">
-   <input type="hidden" name="JDate" id="JDate" value="${JDate}">
-   <input type="hidden" name="selectedSeat" id="selectedSeat" value="${selectedSeat}">
-   
-      
-   
-  </div>
-  <button type="submit" class="btn btn-primary">Confirm And Pay Via Google Pay</button>
-  <button type="submit" class="btn btn-primary">Confirm And Pay Via Phone Pay</button>
-   <button type="submit" class="btn btn-primary">Confirm And Pay Via PAYTM</button>
-  <button type="submit" class="btn btn-primary">Confirm And Pay Via Credit/Debit Card</button>
-  
-</form>
+		<table class="table">
+  				<thead >
+    			<tr>
+      				<th scope="col" style=" text-align:center;color:red;">VIEW YOUR Reservation</th>
+    			</tr>
+  				</thead>
+  		</table>
+  		<c:forEach var="emp" items="${busList}">
+  			<table class="table">
+  			<thead class="thead-dark">
+    		<tr style="border-bottom: 1px solid #000;">
+    			<th scope="col" style=" text-align: center;">BUS NAME<br>   ${emp.busName}</th>
+      			<th scope="col" style=" text-align: center;">FROM<br>   ${emp.startCity}</th>
+      			<th scope="col" style=" text-align: center;">TO<br>     ${emp.destinationCity}</th>
+      			<th scope="col" style=" text-align: center;">TIME <br> ${emp.startingTime}</th>
+    		</tr>	
+  			</thead>
+  		</table>
+    	</c:forEach>
+  		
+  		
+  		
+  		<table class="table">
+  			<thead>
+    		<tr>
+    			
+      			<th scope="col" style="text-align: center;"><form action = "/user/login" method="POST"><input type="submit" class="list-group-item list-group-item-action list-group-item-success" value="BOOK TICKET NOW"></form></th>
+      			<th scope="col" style="text-align: center;"><input type="submit" class="list-group-item list-group-item-action list-group-item-success" value="Exit" onclick="myFunction()"></th>
+    		</tr>
+  			</thead>
+  		</table>
+  		
+  			
+  		
+
+
+
 	</div>
 	<p class="copy_rights">&copy; 2021 ZLINE TRAVELS . All Rights Reserved | Design by  <a href="hhttps://www.linkedin.com/in/adarsh57/" target="_blank"> Adarsh Biswal</a></p>
 </div>
 <script src="js/jquery.nicescroll.js"></script>
 <script src="js/scripts.js"></script>
+<script type="text/javascript">
+function myFunction() {
+	  var r = confirm("You are about to return to Home Page");
+	  if(r==true)
+		{
+			window.location.href ="/";
+		}
+	}
+
+
+
+
+
+</script>
 </body>
 </html>

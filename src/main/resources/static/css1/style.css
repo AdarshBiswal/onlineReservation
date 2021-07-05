@@ -26,7 +26,7 @@ img{max-width:100%;}
 body{
 	padding:0;
 	margin:0;
-    background:url("/images1/banner.jpg") no-repeat center !important;
+    background:url("/images1/banner.jpg")  center !important;
     background-size: cover;
     -webkit-background-size: cover;
     -o-background-size: cover;

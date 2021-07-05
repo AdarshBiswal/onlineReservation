@@ -15,6 +15,7 @@ public interface BusRepo extends JpaRepository<BusModel, String> {
 	public BusModel findById(int id);
 	public BusModel findByBusName(String name);
 	public List<BusModel> findByStartCity(String startCity);
+	public List<BusModel> findAll();
 	
 
 }

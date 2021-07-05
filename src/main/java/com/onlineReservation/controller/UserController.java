@@ -37,10 +37,33 @@ public class UserController {
 	 * }
 	 */
 	
+	
+	
+	@GetMapping("/signinAdmin")
+	public ModelAndView adminLogin(ModelAndView mv)
+	{
+		mv.setViewName("adminLogin");
+		return mv;
+	}
+	
+	@PostMapping("Adminlogin")
+	public ModelAndView adminSignVerification (@Param("email") String email, @Param("password") String password,@Param("loginForm") String loginForm, ModelAndView mv)
+	{
+		if(email.equals("admin@zline.com") && password.equals("Admin@123"))
+		{
+			mv.setViewName("adminManagePage");
+			return mv;
+		}
+		else
+		{
+			mv.setViewName("adminLogin");
+			return mv;
+		}
+	}
 	@PostMapping("/chooseLogin")
 	public ModelAndView signPageChoose(@Param("loginInfo") String loginInfo , ModelAndView mv)
 	{
-		System.out.println(loginInfo);
+		System.out.println(loginInfo+" LOGIN INFO");
 		mv.addObject("loginInfo",loginInfo);
 		mv.setViewName("signin");
 		return mv;

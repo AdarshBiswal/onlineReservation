@@ -16,6 +16,14 @@ public class BusService {
 	@Autowired
 	BusRepo busRepo;
 	
+	
+	
+	public List<BusModel> getAllBusList()
+	{
+		List<BusModel> bm=busRepo.findAll();
+		return bm;
+	}
+	
 	public String AddBus(String busName, String startCity, String destinationCity, String bookedSeat, String startingTime, String day)
 	{
 		BusModel bus=new BusModel(busName, startCity, destinationCity, bookedSeat, startingTime, day);

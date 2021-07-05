@@ -27,6 +27,7 @@
 			<li class="tol">Toll Number : 7684971077</li>				
 			<li class="sig"><a href="/register">Sign Up</a></li> 
 			<li class="sigi"><a href="/signin">/ Sign In</a></li>
+			<li class="sigi"><a href="/user/signinAdmin">/ Admin Login</a></li>
         </ul>
 		<div class="clearfix"></div>
 	</div>
@@ -60,6 +61,9 @@
 		<br>
 	</div>
 	</form>
+	<form action="/bus/availableBus" method="GET">
+		<button class="btn" type="submit"  name="buslistavailbale" value="" id="buslistavailbale" Style="position:relative; left:42%; background-color: #34a30b; color: white; padding: 15px 32px;top:373px;font-size: 16px;">ALL BUS TIMINGS</button>
+	</form>
 </div>
 
 <div class="container">
@@ -91,6 +95,7 @@
 	function myFun()
 	{
 		document.getElementById("loginInfo").value="reservation";
+		alert(document.getElementById("loginInfo").value);
 		
 	}
 	function myFun1()
@@ -98,6 +103,7 @@
 		document.getElementById("loginInfo").value="manage";
 		
 	}
+
 </script>
 </html>
 </html>

@@ -31,6 +31,16 @@ public class BusController {
 	
 	
 	
+	
+	@GetMapping("/availableBus")
+	public ModelAndView getAvailbleBus(ModelAndView mv)
+	{
+		List<BusModel> bm=busService.getAllBusList();
+		mv.addObject("busList",bm);
+		mv.setViewName("availableBusList");
+		return mv;
+	}
+	
 	@PostMapping("/allBusDetailsByLocation")
 	public ModelAndView getAllBus(@Param("fromCity") String fromCity,@Param("toCity") String toCity, @Param("JDate") String JDate, @Param("email") String email  , ModelAndView mv)
 	{
@@ -76,7 +86,7 @@ public class BusController {
 		  
 		  System.out.println(busName);
 		  String s=busService.AddBus(busName, startCity, destinationCity, bookedSeat, startingTime, day);
-		  mv.setViewName("home");
+		  mv.setViewName("adminManagePage");
 			 return mv;
 	  }
 	  
