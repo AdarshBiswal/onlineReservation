@@ -92,6 +92,7 @@ span.psw {
 	<div class="main" >
 	
 		<h2>Select the seat</h2>
+		
 		<form action="/booking/payment" method="post" onsubmit="myFunction2()">
 		
 			<ol>

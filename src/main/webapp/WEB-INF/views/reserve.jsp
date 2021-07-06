@@ -100,6 +100,7 @@ span.psw {
 	<div class="main">
 		<h2>Book Your Ticket</h2>
 		<div class="clear"></div>
+		<p style="position:relative; left:10%;color:red;">${errorMessage}</p>
 <form action="/bus/allBusDetailsByLocation" method="post">
   <div class="form-row">
     <div class="form-group col-md-6">

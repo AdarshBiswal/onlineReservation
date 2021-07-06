@@ -54,6 +54,7 @@ public class BusController {
 			System.out.println(toCity);
 			System.out.println(JDate);
 			List<String> al=busService.getAllBusNameByLocation(fromCity,toCity );
+			
 			System.out.println(al.size());
 			if(al.size()>0)
 			{
@@ -68,8 +69,10 @@ public class BusController {
 			}
 			else
 			{
-				mv.addObject("message","Unsuccess");
 				mv.setViewName("reserve");
+				mv.addObject("email",email);
+				String message="No bus available between "+fromCity+" to "+toCity;
+				mv.addObject("errorMessage", message);
 				return mv;
 			}
 		

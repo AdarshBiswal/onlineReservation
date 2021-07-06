@@ -101,6 +101,8 @@ span.psw {
 	<div class="main">
 		<h2>New User Registration</h2>
 		<div class="clear"></div>
+		<p style="position:relative; left:10%;color:red;">${message}</p>
+		
 		<div>
 			<form action="/user/addUser" method="post">
 

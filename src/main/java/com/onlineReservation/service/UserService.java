@@ -24,12 +24,12 @@ public class UserService {
 			   
 			
 			    
-				if(userRepo.findByMobile(mobile).getMobile()==mobile)
+				if(userRepo.findByMobile(mobile)!=null)
 				{
 					System.out.println("Mobile Number  already Exist.Cannot Add User");
 					return "Mobile Number  already Exist";
 				}
-				if(userRepo.findByMobile(email).getEmail()==email)
+				if(userRepo.findByMobile(email)!=null)
 				{
 					return "Emaid id  already Exist";
 				}
@@ -44,7 +44,8 @@ public class UserService {
 			
 		}
 		catch(Exception e) {
-			e.printStackTrace();
+			
+			
 			userRepo.save(umr);
 			return "User Added Successfully.";
 			

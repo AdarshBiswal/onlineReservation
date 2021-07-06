@@ -79,6 +79,7 @@ public class UserController {
 		if(userService.getUserByemailOrPhone(email,password).equals("Unsuccessfull"))
 		{
 			mv.addObject("UserLogged", "Failed");
+			mv.addObject("loginMessage","Invalid User Name and Password");
 			mv.setViewName("signin");
 			return mv;
 		}
@@ -103,7 +104,8 @@ public class UserController {
 	
 	@PostMapping("/addUser")
 	public ModelAndView addUser(@Param("firstName") String firstName,@Param("lastName") String lastName,@Param("email") String email,@Param("mobile") String mobile,@Param("password") String password,ModelAndView mv)
-	{
+	{   
+		System.out.println(email);
 		if(userService.createNewUser(firstName, lastName, email, mobile, password).equals("User Added Successfully."))
 				{
 					mv.setViewName("signin");
@@ -111,6 +113,17 @@ public class UserController {
 				}
 		else
 		{
+			
+			if(userService.createNewUser(firstName, lastName, email, mobile, password).equals("Mobile Number  already Exist.Cannot Add User"))
+			{
+				String message="Mobile number:- "+mobile+" exits";
+				mv.addObject("message", message);
+			}
+			else
+			{
+				String message="Email ID :-"+email+" exits";
+				mv.addObject("message", message);
+			}
 			mv.setViewName("register");
 			return mv;
 		}

@@ -103,6 +103,7 @@ span.psw {
 		<h2>Login</h2>
 		<div class="clear"></div>
 		<div>
+			<p style="position:relative; left:20%;color:red;">${loginMessage}</p>
 			<form action="/user/login" method="post">
 
   				<div class="container">
